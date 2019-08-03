@@ -1150,51 +1150,42 @@ please see below for an example：
 class Animal {
     let Name;
 
-    fn MakeNoise()
-    {
+    fn MakeNoise() {
         println("generic noise")
     }
-    fn ToString()
-    {
+    fn ToString() {
         return "oooooooo"
     }
 }
 
 class Cat : Animal {
-    fn init(name)
-    {
+    fn init(name) {
         this.Name = name
     }
 
-    fn MakeNoise()
-    {
+    fn MakeNoise() {
         println("Meow")
     }
 
-    fn ToString()
-    {
+    fn ToString() {
         return Name + " cat"
     }
 }
 
 class Dog : Animal {
-    fn init(name)
-    {
+    fn init(name) {
         this.Name = name
     }
 
-    fn MakeNoise()
-    {
+    fn MakeNoise() {
         println("Woof!")
     }
 
-    fn ToString()
-    {
+    fn ToString() {
         return Name + " dog"
     }
 
-    fn OnlyDogMethod()
-    {
+    fn OnlyDogMethod() {
         println("secret dog only method")
     }
 }
@@ -1286,8 +1277,7 @@ class Date {
     {
         get { return month }
         set {
-            if ((value > 0) && (value < 13))
-            {
+            if ((value > 0) && (value < 13)) {
                 month = value
             } else {
                println("BAD, month is invalid")
@@ -1358,11 +1348,9 @@ class IndexedNames
 {
     let namelist = []
     let size = 10
-    fn init()
-    {
+    fn init() {
         let i = 0
-        for (i = 0; i < size; i++)
-        {
+        for (i = 0; i < size; i++) {
             namelist[i] = "N. A."
         }
     }
@@ -1376,8 +1364,7 @@ class IndexedNames
         get
         {
             let tmp;
-            if ( index >= 0 && index <= size - 1 )
-            {
+            if ( index >= 0 && index <= size - 1 ) {
                tmp = namelist[index]
             }
             else
@@ -1389,16 +1376,14 @@ class IndexedNames
          }
          set
          {
-             if ( index >= 0 && index <= size-1 )
-             {
+             if ( index >= 0 && index <= size-1 ) {
                  namelist[index] = value
              }
          }
     }
 }
 
-fn Main()
-{
+fn Main() {
     namesObj = new IndexedNames()
 
     //Below code will call Indexer's setter function
@@ -1412,8 +1397,7 @@ fn Main()
 
     namesObj.getNameList()
 
-    for (i = 0; i < namesObj.size; i++)
-    {
+    for (i = 0; i < namesObj.size; i++) {
         println(namesObj[i]) //Calling Indexer's getter function
     }
 }
@@ -1429,8 +1413,7 @@ class Test
    static let x = 0;
    static let y = 5;
 
-   static fn Main()
-   {
+   static fn Main() {
       println(Test.x);
       println(Test.y);
 
