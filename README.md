@@ -506,17 +506,13 @@ let exceptStr = "SUMERROR"
 try {
     let th = 1 + 2
     if (th == 3) { throw exceptStr }
-}
-catch "OTHERERROR" {
+} catch "OTHERERROR" {
     println("Catched OTHERERROR")
-}
-catch exceptStr {
+} catch exceptStr {
     println("Catched is SUMERROR")
-}
-catch {
+} catch {
     println("Catched ALL")
-}
-finally {
+} finally {
     println("finally running")
 }
 
