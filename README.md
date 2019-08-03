@@ -16,7 +16,6 @@ Table of Contents
   * [enum keyword](#enum-keyword)
   * [Meta\-Operators](#meta-operators)
   * [Control flow](#control-flow)
-  * [using statement](#using-statement)
   * [User Defined Operator](#user-defined-operator)
   * [Integer](#integer)
   * [Float](#float)
@@ -390,11 +389,9 @@ Below talbe give an example of meta-operator and their meanings:(only `~+` is sh
 let a, b = 10, 5
 if (a > b) {
     println("a > b")
-}
-elseif a == b { // could also use 'elsif', 'elseif' or 'elif'
+} elseif a == b { // could also use 'elsif', 'elseif' or 'elif'
     println("a = b")
-}
-else {
+} else {
     println("a < b")
 }
 
@@ -528,8 +525,7 @@ let testStr = "123"
 case testStr in { // in(exact/partial match), is(only exact match)
     "abc", "mno" { println("testStr is 'abc' or 'mno'") }
     "def"        { println("testStr is 'def'") }
-    `\d+`        { println("testStr contains digit") }
-    else         { println("testStr not matched") }
+    `\d+`        { println("testStr contains digit") } else         { println("testStr not matched") }
 }
 
 let i = [{"a": 1, "b": 2}, 10]
@@ -537,8 +533,7 @@ let x = [{"a": 1, "b": 2},10]
 case i in {
     1, 2 { println("i matched 1, 2") }
     3    { println("i matched 3") }
-    x    { println("i matched x") }
-    else { println("i not matched anything")}
+    x    { println("i matched x") } else { println("i not matched anything")}
 }
 
 ```
@@ -1275,8 +1270,7 @@ class Date {
     let month = 7;  // Backing store
     property Month
     {
-        get { return month }
-        set {
+        get { return month } set {
             if ((value > 0) && (value < 13)) {
                 month = value
             } else {
@@ -1336,16 +1330,14 @@ You declare an Indexer using `property this[parameter]`.
 
 ```swift
 property this[index] {
-    get { xxx }
-    set { xxx }
+    get { xxx } set { xxx }
 }
 ```
 
 Please see the example code:
 
 ```swift
-class IndexedNames
-{
+class IndexedNames {
     let namelist = []
     let size = 10
     fn init() {
@@ -1359,23 +1351,17 @@ class IndexedNames
         println(namelist)
     }
 
-    property this[index]
-    {
-        get
-        {
+    property this[index] {
+        get {
             let tmp;
             if ( index >= 0 && index <= size - 1 ) {
                tmp = namelist[index]
-            }
-            else
-            {
+            } else {
                tmp = ""
             }
      
             return tmp
-         }
-         set
-         {
+         } set {
              if ( index >= 0 && index <= size-1 ) {
                  namelist[index] = value
              }
@@ -1408,8 +1394,7 @@ Main()
 #### static members/methods/properties
 
 ```swift
-class Test
-{
+class Test {
    static let x = 0;
    static let y = 5;
 
@@ -1562,7 +1547,7 @@ A defer statement defers the execution of a function until the surrounding funct
 The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
 
 ```swift
-let add  =  fn(x,y){
+let add = fn(x, y) {
     defer println("I'm defer1")
     println("I'm in add")
     defer println("I'm defer2")
